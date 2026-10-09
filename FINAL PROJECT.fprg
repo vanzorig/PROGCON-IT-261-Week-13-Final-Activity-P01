@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="FINAL PROJECT"/>
+        <attribute name="authors" value="Fifth"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-10 02:24:57 AM"/>
+        <attribute name="created" value="RmlmdGg7V0lOLU5LTU8wSTlVREhSOzIwMjYtMTAtMTA7MTI6NDk6NTkgQU07Mjg0NQ=="/>
+        <attribute name="edited" value="RmlmdGg7V0lOLU5LTU8wSTlVREhSOzIwMjYtMTAtMTA7MDI6MjQ6NTcgQU07MjsyOTQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ComputerInput" type="String" array="True" size="3"/>
+            <declare name="UserScore" type="Integer" array="False" size=""/>
+            <declare name="ComputerScore" type="Integer" array="False" size=""/>
+            <declare name="UserInput" type="String" array="False" size=""/>
+            <declare name="ComputerGuess" type="String" array="False" size=""/>
+            <declare name="QUIT" type="String" array="False" size=""/>
+            <assign variable="ComputerInput[0]" expression="&quot;Rock&quot;"/>
+            <assign variable="ComputerInput[1]" expression="&quot;Paper&quot;"/>
+            <assign variable="ComputerInput[2]" expression="&quot;Scissors&quot;"/>
+            <assign variable="UserScore" expression="0"/>
+            <assign variable="ComputerScore" expression="0"/>
+            <assign variable="QUIT" expression="&quot;Quit&quot;"/>
+            <output expression="&quot;Please enter Rock, Paper, Scissors, or quit to stop playing.&quot;" newline="True"/>
+            <input variable="UserInput"/>
+            <while expression="(UserInput &lt;&gt; &quot;Quit&quot;) OR (UserInput &lt;&gt; &quot;quit&quot;)">
+                <assign variable="ComputerGuess" expression="ComputerInput[random(3)]"/>
+                <if expression="(UserInput == &quot;Rock&quot; AND ComputerGuess == &quot;Rock&quot;)&#13;&#10;OR (UserInput == &quot;rock&quot; AND ComputerGuess == &quot;Rock&quot;)&#13;&#10;OR (UserInput == &quot;Paper&quot; AND ComputerGuess == &quot;Paper&quot;)&#13;&#10;OR (UserInput == &quot;paper&quot; AND ComputerGuess == &quot;Paper&quot;)&#13;&#10;OR (UserInput == &quot;Scissors&quot; AND ComputerGuess == &quot;Scissors&quot;)&#13;&#10;OR (UserInput == &quot;scissors&quot; AND ComputerGuess == &quot;Scissors&quot;)">
+                    <then>
+                        <output expression="&quot;Tie&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="(UserInput == &quot;Rock&quot; and ComputerGuess == &quot;Paper&quot;) OR (UserInput == &quot;rock&quot; and ComputerGuess == &quot;Paper&quot;)">
+                            <then>
+                                <output expression="&quot;Computer Wins&quot;" newline="True"/>
+                                <assign variable="ComputerScore" expression="ComputerScore + 1"/>
+                            </then>
+                            <else>
+                                <if expression="(UserInput == &quot;Paper&quot; and ComputerGuess == &quot;Scissors&quot;) OR (UserInput == &quot;paper&quot; and ComputerGuess == &quot;Scissors&quot;)">
+                                    <then>
+                                        <output expression="&quot;Computer Wins&quot;" newline="True"/>
+                                        <assign variable="ComputerScore" expression="ComputerScore + 1"/>
+                                    </then>
+                                    <else>
+                                        <if expression="(UserInput == &quot;Scissors&quot; and ComputerGuess == &quot;Rock&quot;) OR (UserInput == &quot;scissors&quot; and ComputerGuess == &quot;Rock&quot;)">
+                                            <then>
+                                                <output expression="&quot;Computer Wins&quot;" newline="True"/>
+                                                <assign variable="ComputerScore" expression="ComputerScore + 1"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;You Wins&quot;" newline="True"/>
+                                                <assign variable="UserScore" expression="UserScore + 1"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;The score is User: &quot; &amp; UserScore &amp; &quot;Computer: &quot; &amp; ComputerScore" newline="True"/>
+                <output expression="&quot;Please enter Rock, Paper, Scissors, or quit to stop playing.&quot;" newline="True"/>
+                <input variable="UserInput"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
