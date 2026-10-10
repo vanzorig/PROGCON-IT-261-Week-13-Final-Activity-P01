@@ -1,4 +1,4 @@
-# PROGCON IT261 Week 13 Final Activity PO1
+# PROGCON IT261 Week 13 Final Activity P01
 
 ## Project Title
 Rock, Paper, Scissors Game
